@@ -1,5 +1,14 @@
 'use strict';
 function one_add_next_multiply_three(collection){
-  return [12,24,36,48,60,72,84,96,108,120];
+  var result = [];
+  recursion(collection, result);
+  return result;
+}
+
+function recursion(collection, result){
+  if(collection.length > 1){
+    result.push((collection[0] + collection[1]) * 3);
+    recursion(collection.slice(1), result);
+  }
 }
 module.exports = one_add_next_multiply_three;
